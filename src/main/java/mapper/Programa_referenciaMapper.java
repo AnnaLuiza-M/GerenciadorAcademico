@@ -14,14 +14,14 @@ import java.util.List;
 )
 public interface Programa_referenciaMapper {
     // DTO → Entidade (para criação)
-    Programa_referencia toEntity(Programa_ReferenciaCreateDTO dto);
+    Programa_referencia toEntity(Programa_referenciaCreateDTO dto);
 
     // Entidade → DTO (para resposta)
-    Programa_ReferenciaResponseDTO toResponseDTO(Programa_referencia entity);
+    Programa_referenciaResponseDTO toResponseDTO(Programa_referencia entity);
 
     // DTO → Entidade (para atualização parcial)
-    void updateFromDto(Programa_ReferenciaUpdateDTO dto, @MappingTarget Programa_referencia entity);
+    void updateFromDto(Programa_referenciaUpdateDTO dto, @MappingTarget Programa_referencia entity);
 
     // Lista de Entidades → Lista de DTOs
-    List<Programa_ReferenciaResponseDTO> toResponseDTOList(List<Programa_referencia> entities);
+    List<Programa_referenciaResponseDTO> toResponseDTOList(List<Programa_referencia> entities);
 }

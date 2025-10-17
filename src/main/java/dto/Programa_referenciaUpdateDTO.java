@@ -4,13 +4,13 @@ import jakarta.validation.constraints.NotNull;
 
 import java.util.List;
 
-public class Programa_ReferenciaUpdateDTO {
+public class Programa_referenciaUpdateDTO {
 
 
         @NotNull
         private List<Integer> idsReferenciasBibliograficas;
 
-        public Programa_ReferenciaUpdateDTO() {}
+        public Programa_referenciaUpdateDTO() {}
 
         public List<Integer> getIdsReferenciasBibliograficas() {
             return idsReferenciasBibliograficas;

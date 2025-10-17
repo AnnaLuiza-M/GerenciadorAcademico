@@ -2,7 +2,7 @@ package dto;
 
 import java.util.List;
 
-public class Programa_ReferenciaResponseDTO {
+public class Programa_referenciaResponseDTO {
 
 
         private int id;
@@ -10,7 +10,7 @@ public class Programa_ReferenciaResponseDTO {
         private String nomePrograma;
         private List<Referencia_bibliograficaResponseDTO> referenciasBibliograficas;
 
-        public Programa_ReferenciaResponseDTO() {}
+        public Programa_referenciaResponseDTO() {}
 
         public int getId() {
             return id;

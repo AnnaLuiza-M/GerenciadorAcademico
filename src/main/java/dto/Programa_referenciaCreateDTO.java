@@ -4,7 +4,7 @@ import jakarta.validation.constraints.NotNull;
 
 import java.util.List;
 
-public class Programa_ReferenciaCreateDTO {
+public class Programa_referenciaCreateDTO {
 
         @NotNull
         private int idPrograma;
@@ -12,7 +12,7 @@ public class Programa_ReferenciaCreateDTO {
         @NotNull
         private List<Integer> idsReferenciasBibliograficas;
 
-        public Programa_ReferenciaCreateDTO() {}
+        public Programa_referenciaCreateDTO() {}
 
         public int getIdPrograma() {
             return idPrograma;
