@@ -1,7 +1,6 @@
 package mapper;
 import dto.*;
 import model.entities.Disciplina_Matriz;
-import model.entities.Programa;
 import org.mapstruct.Mapper;
 import org.mapstruct.MappingTarget;
 import org.mapstruct.NullValuePropertyMappingStrategy;
@@ -15,7 +14,7 @@ import java.util.List;
 )
 public interface Disciplina_MatrizMapper {
     // DTO → Entidade (para criação)
-    Programa toEntity(Disciplina_MatrizCreateDTO dto);
+    Disciplina_Matriz toEntity(Disciplina_MatrizCreateDTO dto);
 
     // Entidade → DTO (para resposta)
     Disciplina_MatrizResponseDTO toResponseDTO(Disciplina_Matriz entity);
