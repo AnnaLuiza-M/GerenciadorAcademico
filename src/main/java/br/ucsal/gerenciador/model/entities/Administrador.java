@@ -2,19 +2,19 @@ package br.ucsal.gerenciador.model.entities;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.io.Serial;
 
 @Entity
 @NoArgsConstructor
-public class Administrador {
+@Getter
+@Setter
+public class Administrador extends Usuario {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
-
-    @NotNull
+    @Column(nullable = false)
     private String nome_completo;
 
     @Column(unique = true)

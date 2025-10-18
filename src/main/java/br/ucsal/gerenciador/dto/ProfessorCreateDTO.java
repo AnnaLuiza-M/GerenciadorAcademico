@@ -1,20 +1,20 @@
 package br.ucsal.gerenciador.dto;
 
 import jakarta.persistence.Column;
+import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 
 import java.io.Serial;
 
 public class ProfessorCreateDTO {
 
-    @NotNull
+    @NotBlank
     private String nome_completo;
 
-    @Column(unique = true)
-    @Serial
+    @NotNull
     private long numero_registro;
 
-    @NotNull
+    @NotBlank
     private String escola_vinculada;
 
     private boolean ativo = true;

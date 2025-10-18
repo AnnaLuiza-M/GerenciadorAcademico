@@ -2,7 +2,6 @@ package br.ucsal.gerenciador.model.entities;
 
 import jakarta.persistence.*;
 
-import jakarta.validation.constraints.NotNull;
 import lombok.NoArgsConstructor;
 
 import java.io.Serial;
@@ -11,11 +10,7 @@ import java.util.List;
 
 @NoArgsConstructor
 @Entity
-public class Professor {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+public class Professor extends Usuario {
 
     @Column(nullable = false)
     private String nome_completo;
