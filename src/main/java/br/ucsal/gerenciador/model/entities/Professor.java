@@ -17,14 +17,14 @@ public class Professor {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @NotNull
+    @Column(nullable = false)
     private String nome_completo;
 
     @Column(unique = true)
     @Serial
     private long numero_registro;
 
-    @NotNull
+    @Column(nullable = false)
     private String escola_vinculada;
 
     private boolean ativo = true;
