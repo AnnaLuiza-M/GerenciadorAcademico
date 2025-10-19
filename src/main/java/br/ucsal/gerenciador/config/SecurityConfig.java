@@ -32,8 +32,10 @@ public class SecurityConfig {
                         .requestMatchers("/swagger-ui/**", "/v3/api-docs/**").permitAll()
 
                         // 🔐 Acesso restrito por papel (ROLE)
-                        .requestMatchers("/api/admin/**").hasRole("ADMINISTRADOR")
-                        .requestMatchers("/api/professor/**").hasAnyRole("PROFESSOR", "ADMINISTRADOR")
+//                        .requestMatchers("/professor/**").hasRole("ADMINISTRADOR")
+                                .requestMatchers("/professor/**").hasAuthority("ROLE_ADMINISTRADOR")
+
+//                        .requestMatchers("/api/professor/**").hasAnyRole("PROFESSOR", "ADMINISTRADOR")
 
                         // Tudo o mais precisa estar autenticado
                         .anyRequest().authenticated()

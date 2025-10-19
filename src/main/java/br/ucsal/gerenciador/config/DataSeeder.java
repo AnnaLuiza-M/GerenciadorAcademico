@@ -1,6 +1,7 @@
 package br.ucsal.gerenciador.config;
 
 
+
 import br.ucsal.gerenciador.model.entities.Administrador;
 import br.ucsal.gerenciador.model.enums.Role;
 import br.ucsal.gerenciador.repository.AdministradorRepository;
@@ -29,4 +30,6 @@ public class DataSeeder {
             }
         };
     }
+
+
 }

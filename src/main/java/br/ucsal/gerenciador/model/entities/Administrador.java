@@ -12,6 +12,7 @@ import java.io.Serial;
 @NoArgsConstructor
 @Getter
 @Setter
+@PrimaryKeyJoinColumn(name = "id")
 public class Administrador extends Usuario {
 
     @Column(nullable = false)
