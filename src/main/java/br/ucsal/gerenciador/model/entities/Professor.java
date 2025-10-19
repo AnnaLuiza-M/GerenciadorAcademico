@@ -10,7 +10,11 @@ import java.util.List;
 
 @NoArgsConstructor
 @Entity
-public class Professor extends Usuario {
+public class Professor{
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
 
     @Column(nullable = false)
     private String nome_completo;

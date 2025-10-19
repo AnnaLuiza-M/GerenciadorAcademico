@@ -1,10 +1,10 @@
-package br.ucsal.gerenciador.mapper;
-
-
-import br.ucsal.gerenciador.model.entities.Administrador;
-import org.mapstruct.Mapper;
-import org.mapstruct.MappingTarget;
-import org.mapstruct.NullValuePropertyMappingStrategy;
+//package br.ucsal.gerenciador.mapper;
+//
+//
+//
+//import org.mapstruct.Mapper;
+//import org.mapstruct.MappingTarget;
+//import org.mapstruct.NullValuePropertyMappingStrategy;
 
 //import java.util.List;
 //
