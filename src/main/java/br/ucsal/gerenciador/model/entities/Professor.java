@@ -2,19 +2,20 @@ package br.ucsal.gerenciador.model.entities;
 
 import jakarta.persistence.*;
 
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 
 import java.io.Serial;
-import java.util.ArrayList;
 import java.util.List;
 
+
+@Getter
+@Setter
 @NoArgsConstructor
 @Entity
-public class Professor{
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+public class Professor extends Usuario {
 
     @Column(nullable = false)
     private String nome_completo;
@@ -28,18 +29,7 @@ public class Professor{
 
     private boolean ativo = true;
 
-    @OneToMany(mappedBy = "professor")
-    private List<ProfessorPrograma> programas = new ArrayList<>();
-
-
-
-
-
-
-
-
-
-
-
+    @ManyToMany(mappedBy = "professores")
+    private List<Programa> programas;
 
 }

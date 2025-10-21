@@ -37,8 +37,13 @@ public class Programa {
 
     private boolean ativo = true;
 
-    @OneToMany(mappedBy = "programa")
-    private List<ProfessorPrograma> professores = new ArrayList<>();
+    @ManyToMany
+    @JoinTable(
+            name = "programa_professor", // Nome da nova tabela que será criada
+            joinColumns = @JoinColumn(name = "programa_id"), // Coluna para o ID de Programa
+            inverseJoinColumns = @JoinColumn(name = "professor_id") // Coluna para o ID de Professor
+    )
+    private List<Professor> professores;
 
     @OneToOne(mappedBy = "programa")
     private Programa_referencia referencia;
