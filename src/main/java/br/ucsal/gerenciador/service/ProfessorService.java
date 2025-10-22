@@ -24,8 +24,15 @@ public class ProfessorService {
     }
 
     public ProfessorResponseDTO create(ProfessorCreateDTO dto) {
+
+
+
         Professor professor = mapper.toEntity(dto);
+
+
+
         repository.save(professor);
+
         return mapper.toResponseDTO(professor);
     }
 

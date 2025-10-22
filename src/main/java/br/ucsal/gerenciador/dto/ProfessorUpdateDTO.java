@@ -7,13 +7,13 @@ import jakarta.validation.constraints.NotNull;
 import java.io.Serial;
 
 public class ProfessorUpdateDTO {
-    @NotBlank
+
     private String nome_completo;
 
-   @NotNull
+
     private long numero_registro;
 
-    @NotBlank
+
     private String escola_vinculada;
 
     private boolean ativo = true;
