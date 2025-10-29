@@ -3,12 +3,11 @@ package br.ucsal.gerenciador.controller;
 import br.ucsal.gerenciador.dto.DisciplinaCreateDTO;
 import br.ucsal.gerenciador.dto.DisciplinaResponseDTO;
 import br.ucsal.gerenciador.dto.DisciplinaUpdateDTO;
+import br.ucsal.gerenciador.service.DisciplinaService;
 import jakarta.validation.Valid;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import br.ucsal.gerenciador.service.DisciplinaService;
 
 import java.util.List;
 
@@ -16,26 +15,24 @@ import java.util.List;
 @RequestMapping("/disciplina")
 public class DisciplinaController {
 
-    @Autowired
-    DisciplinaService disciplinaService;
+
+    private final DisciplinaService disciplinaService;
+
 
     public DisciplinaController(DisciplinaService disciplinaService) {
         this.disciplinaService = disciplinaService;
     }
 
     @GetMapping
-    public ResponseEntity<List<DisciplinaResponseDTO>>  findAll() {
+    public ResponseEntity<List<DisciplinaResponseDTO>> findAll() {
         List<DisciplinaResponseDTO> disciplina = disciplinaService.findAll();
         return ResponseEntity.ok(disciplina);
     }
 
     @GetMapping("/{id}")
     public ResponseEntity<DisciplinaResponseDTO> findById(@PathVariable int id) {
-        DisciplinaResponseDTO disciplina = disciplinaService.findById(id);
 
-        if (disciplina == null) {
-            return ResponseEntity.notFound().build();
-        }
+        DisciplinaResponseDTO disciplina = disciplinaService.findById(id);
         return ResponseEntity.ok(disciplina);
     }
 
@@ -45,24 +42,20 @@ public class DisciplinaController {
         return ResponseEntity.status(HttpStatus.CREATED).body(disciplinaCriado);
     }
 
-    @PutMapping("/{id}")
+
+    @PatchMapping("/{id}")
     public ResponseEntity<DisciplinaResponseDTO> update(@PathVariable int id, @RequestBody @Valid DisciplinaUpdateDTO novoDisciplina) {
         DisciplinaResponseDTO disciplinaAtualizado = disciplinaService.update(id, novoDisciplina);
 
-        if (disciplinaAtualizado == null) {
-            return ResponseEntity.notFound().build();
-        }
         return ResponseEntity.ok(disciplinaAtualizado);
     }
 
-    @DeleteMapping("/{id}")
-    public ResponseEntity<DisciplinaResponseDTO> delete(@PathVariable int id){
-        DisciplinaResponseDTO disciplina = disciplinaService.findById(id);
 
-        if (disciplina == null) {
-            return ResponseEntity.notFound().build();
-        }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> delete(@PathVariable int id) {
+
         disciplinaService.delete(id);
-        return ResponseEntity.ok(disciplina);
+        return ResponseEntity.noContent().build();
     }
 }

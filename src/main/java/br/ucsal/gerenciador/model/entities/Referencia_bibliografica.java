@@ -4,10 +4,13 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import br.ucsal.gerenciador.model.enums.Categoria_referencia;
 import br.ucsal.gerenciador.model.enums.Tipo_referencia;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.time.LocalDate;
-
+@Getter
+@Setter
 @NoArgsConstructor
 @Entity
 public class Referencia_bibliografica {
@@ -27,6 +30,7 @@ public class Referencia_bibliografica {
     private String editora;
     private Integer ano;
     private String isbn;
+    private boolean ativo = true;
 
     @NotNull
     @Enumerated(EnumType.STRING)
@@ -37,11 +41,11 @@ public class Referencia_bibliografica {
     private Categoria_referencia categoria;
 
     private String url;
-    private LocalDate dataAcesso;
+    private LocalDate data_acesso;
 
-    @ManyToOne
-    @JoinColumn(name = "referencia_id")
-    private Programa_referencia programaReferencia;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "programa_id")
+    private Programa programa;
 
 
 }

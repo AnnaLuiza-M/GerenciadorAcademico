@@ -1,11 +1,10 @@
 package br.ucsal.gerenciador.dto;
 
 import jakarta.validation.constraints.NotNull;
+import java.util.List;
 
 public class ProgramaCreateDTO {
 
-    @NotNull
-    private int idDisciplina;
 
     @NotNull
     private String ementa;
@@ -24,16 +23,11 @@ public class ProgramaCreateDTO {
 
     private boolean ativo = true;
 
+    private List<Integer> professores_ids;
+
     public ProgramaCreateDTO() {
     }
 
-    public int getIdDisciplina() {
-        return idDisciplina;
-    }
-
-    public void setIdDisciplina(int idDisciplina) {
-        this.idDisciplina = idDisciplina;
-    }
 
     public String getEmenta() {
         return ementa;
@@ -81,5 +75,13 @@ public class ProgramaCreateDTO {
 
     public void setAtivo(boolean ativo) {
         this.ativo = ativo;
+    }
+
+    public List<Integer> getProfessores_ids() {
+        return professores_ids;
+    }
+
+    public void setProfessores_ids(List<Integer> professores_ids) {
+        this.professores_ids = professores_ids;
     }
 }

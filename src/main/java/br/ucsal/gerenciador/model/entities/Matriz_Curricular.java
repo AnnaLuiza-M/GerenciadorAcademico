@@ -1,12 +1,15 @@
 package br.ucsal.gerenciador.model.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
+import java.util.List;
+
+@Getter
+@Setter
 @NoArgsConstructor
 @Entity
 public class Matriz_Curricular {
@@ -39,7 +42,18 @@ public class Matriz_Curricular {
     @NotNull
     private int horas_tcc;
 
+    private boolean ativo = true;
 
+    @ManyToMany
+    @JoinTable(
+            name = "matriz_disciplina",
+            joinColumns = @JoinColumn(name = "matriz_curricular_id"),
+            inverseJoinColumns = @JoinColumn(
+                    name = "disciplina_id",
+                    referencedColumnName = "id_disciplina"
+            )
+    )
+    private List<Disciplina> disciplinas; // O nome do campo é 'professores' (plural)
 
 
 

@@ -1,109 +1,118 @@
 package br.ucsal.gerenciador.dto;
-
+import java.util.List;
 import jakarta.validation.constraints.NotNull;
 
 public class Matriz_CurricularCreateDTO {
 
 
-        @NotNull
-        private String nomeMatriz;
+    @NotNull
+    private String nome_matriz;
 
-        @NotNull
-        private String turno;
+    @NotNull
+    private String turno;
 
-        @NotNull
-        private String campus;
+    @NotNull
+    private String campus;
 
-        @NotNull
-        private String habilitacao;
+    @NotNull
+    private String habilitacao;
 
-        @NotNull
-        private int horasComplementares;
+    @NotNull
+    private int horas_complementares;
 
-        @NotNull
-        private int horasObrigatorias;
+    @NotNull
+    private int horas_obrigatorias;
 
-        @NotNull
-        private int horasEletivas;
+    @NotNull
+    private int horas_eletivas;
 
-        @NotNull
-        private int horasTcc;
+    @NotNull
+    private int horas_tcc;
 
-        private boolean ativo = true;
+    private boolean ativo = true;
 
-        public Matriz_CurricularCreateDTO() {}
+    private List<Integer> disciplina_ids;
 
-        public String getNomeMatriz() {
-            return nomeMatriz;
-        }
+    public Matriz_CurricularCreateDTO() {}
 
-        public void setNomeMatriz(String nomeMatriz) {
-            this.nomeMatriz = nomeMatriz;
-        }
-
-        public String getTurno() {
-            return turno;
-        }
-
-        public void setTurno(String turno) {
-            this.turno = turno;
-        }
-
-        public String getCampus() {
-            return campus;
-        }
-
-        public void setCampus(String campus) {
-            this.campus = campus;
-        }
-
-        public String getHabilitacao() {
-            return habilitacao;
-        }
-
-        public void setHabilitacao(String habilitacao) {
-            this.habilitacao = habilitacao;
-        }
-
-        public int getHorasComplementares() {
-            return horasComplementares;
-        }
-
-        public void setHorasComplementares(int horasComplementares) {
-            this.horasComplementares = horasComplementares;
-        }
-
-        public int getHorasObrigatorias() {
-            return horasObrigatorias;
-        }
-
-        public void setHorasObrigatorias(int horasObrigatorias) {
-            this.horasObrigatorias = horasObrigatorias;
-        }
-
-        public int getHorasEletivas() {
-            return horasEletivas;
-        }
-
-        public void setHorasEletivas(int horasEletivas) {
-            this.horasEletivas = horasEletivas;
-        }
-
-        public int getHorasTcc() {
-            return horasTcc;
-        }
-
-        public void setHorasTcc(int horasTcc) {
-            this.horasTcc = horasTcc;
-        }
-
-        public boolean isAtivo() {
-            return ativo;
-        }
-
-        public void setAtivo(boolean ativo) {
-            this.ativo = ativo;
-        }
+    public String getNome_matriz() {
+        return nome_matriz;
     }
+
+    public void setNome_matriz(String nome_matriz) {
+        this.nome_matriz = nome_matriz;
+    }
+
+    public String getTurno() {
+        return turno;
+    }
+
+    public void setTurno(String turno) {
+        this.turno = turno;
+    }
+
+    public String getCampus() {
+        return campus;
+    }
+
+    public void setCampus(String campus) {
+        this.campus = campus;
+    }
+
+    public String getHabilitacao() {
+        return habilitacao;
+    }
+
+    public void setHabilitacao(String habilitacao) {
+        this.habilitacao = habilitacao;
+    }
+
+    public int getHoras_complementares() {
+        return horas_complementares;
+    }
+
+    public void setHoras_complementares(int horas_complementares) {
+        this.horas_complementares = horas_complementares;
+    }
+
+    public int getHoras_obrigatorias() {
+        return horas_obrigatorias;
+    }
+
+    public void setHoras_obrigatorias(int horas_obrigatorias) {
+        this.horas_obrigatorias = horas_obrigatorias;
+    }
+
+    public int getHoras_eletivas() {
+        return horas_eletivas;
+    }
+
+    public void setHoras_eletivas(int horas_eletivas) {
+        this.horas_eletivas = horas_eletivas;
+    }
+
+    public int getHoras_tcc() {
+        return horas_tcc;
+    }
+
+    public void setHoras_tcc(int horas_tcc) {
+        this.horas_tcc = horas_tcc;
+    }
+
+    public boolean isAtivo() {
+        return ativo;
+    }
+
+    public void setAtivo(boolean ativo) {
+        this.ativo = ativo;
+    }
+    public List<Integer> getDisciplina_ids() {
+        return disciplina_ids;
+    }
+
+    public void setDisciplina_ids(List<Integer> disciplina_ids) {
+        this.disciplina_ids = disciplina_ids;
+    }
+}
 
 

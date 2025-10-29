@@ -34,6 +34,10 @@ public class SecurityConfig {
                         // Acesso restrito por papel (ROLE)
                         .requestMatchers("/professor/**").hasRole("ADMINISTRADOR")
                         .requestMatchers("/programa/**").hasAnyRole("PROFESSOR", "ADMINISTRADOR")
+                        .requestMatchers("/disciplina/**").hasAnyRole("PROFESSOR", "ADMINISTRADOR")
+                        .requestMatchers("/matriz_curricular/**").hasAnyRole("PROFESSOR", "ADMINISTRADOR")
+                        .requestMatchers("/referencia_bibliografica/**").hasAnyRole("PROFESSOR", "ADMINISTRADOR")
+
 
                         // Tudo o mais precisa estar autenticado
                         .anyRequest().permitAll()
@@ -55,9 +59,5 @@ public class SecurityConfig {
         return config.getAuthenticationManager();
     }
 
-    // Serviço de usuários personalizado
-    @Bean
-    public UserDetailsService userDetailsService() {
-        return usuarioDetailsService;
-    }
+
 }

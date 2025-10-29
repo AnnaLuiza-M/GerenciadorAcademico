@@ -1,22 +1,12 @@
 package br.ucsal.gerenciador.dto;
 
-import jakarta.persistence.Column;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
-
-import java.io.Serial;
 
 public class ProfessorUpdateDTO {
 
     private String nome_completo;
-
-
-    private long numero_registro;
-
-
+    private Long numero_registro;
     private String escola_vinculada;
-
-    private boolean ativo = true;
+    private Boolean ativo;
 
     public ProfessorUpdateDTO() {
     }
@@ -29,11 +19,11 @@ public class ProfessorUpdateDTO {
         this.nome_completo = nome_completo;
     }
 
-    public long getNumero_registro() {
+    public Long getNumero_registro() {
         return numero_registro;
     }
 
-    public void setNumero_registro(long numero_registro) {
+    public void setNumero_registro(Long numero_registro) {
         this.numero_registro = numero_registro;
     }
 
@@ -45,12 +35,11 @@ public class ProfessorUpdateDTO {
         this.escola_vinculada = escola_vinculada;
     }
 
-    public boolean isAtivo() {
+    public Boolean getAtivo() {
         return ativo;
     }
 
-    public void setAtivo(boolean ativo) {
+    public void setAtivo(Boolean ativo) {
         this.ativo = ativo;
     }
-
 }

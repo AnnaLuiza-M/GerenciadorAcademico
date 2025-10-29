@@ -56,7 +56,7 @@ public class ProfessorController {
     }
 
     // --- CORREÇÃO DO DELETE (MELHOR PRÁTICA) ---
-    // 5. Método simplificado e retornando o padrão HTTP 204 (No Content)
+
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> delete(@PathVariable int id) {
         // O 'service.delete(id)' já contém a lógica para

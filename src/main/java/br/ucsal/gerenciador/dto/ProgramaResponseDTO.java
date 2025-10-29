@@ -1,11 +1,12 @@
 package br.ucsal.gerenciador.dto;
 
-import jakarta.validation.constraints.NotNull;
+import java.util.List;
 
 public class ProgramaResponseDTO {
 
     private int id;
-    private int idDisciplina;
+
+
     private String ementa;
     private String objetivos;
     private String conteudo_programatico;
@@ -13,16 +14,21 @@ public class ProgramaResponseDTO {
     private String sistema_avaliacao;
     private boolean ativo = true;
 
+    private List<Integer> disciplina_ids;
+    private List<Integer> professores_ids;
+    private List<Integer> referencia_ids;
+
 
     public ProgramaResponseDTO() {
     }
 
-    public int getIdDisciplina() {
-        return idDisciplina;
+
+    public int getId() {
+        return id;
     }
 
-    public void setIdDisciplina(int idDisciplina) {
-        this.idDisciplina = idDisciplina;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getEmenta() {
@@ -71,5 +77,29 @@ public class ProgramaResponseDTO {
 
     public void setAtivo(boolean ativo) {
         this.ativo = ativo;
+    }
+
+    public List<Integer> getDisciplina_ids() {
+        return disciplina_ids;
+    }
+
+    public void setDisciplina_ids(List<Integer> disciplina_ids) {
+        this.disciplina_ids = disciplina_ids;
+    }
+
+    public List<Integer> getProfessores_ids() {
+        return professores_ids;
+    }
+
+    public void setProfessores_ids(List<Integer> professores_ids) {
+        this.professores_ids = professores_ids;
+    }
+
+    public List<Integer> getReferencia_ids() {
+        return referencia_ids;
+    }
+
+    public void setReferencia_ids(List<Integer> referencia_ids) {
+        this.referencia_ids = referencia_ids;
     }
 }

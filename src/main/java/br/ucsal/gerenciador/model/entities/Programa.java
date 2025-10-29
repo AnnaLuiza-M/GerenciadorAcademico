@@ -2,11 +2,14 @@ package br.ucsal.gerenciador.model.entities;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.util.ArrayList;
 import java.util.List;
-
+@Getter
+@Setter
 @NoArgsConstructor
 @Entity
 public class Programa {
@@ -16,9 +19,8 @@ public class Programa {
     private int id;
 
     @NotNull
-    @OneToMany
-    @JoinColumn(name="id_disciplina")
-    private List<Disciplina> disciplinas;
+    @OneToMany(mappedBy = "programa")
+    private List<Disciplina> disciplinas = new ArrayList<>();
 
     @NotNull
     private String ementa;
@@ -45,17 +47,8 @@ public class Programa {
     )
     private List<Professor> professores;
 
-    @OneToOne(mappedBy = "programa")
-    private Programa_referencia referencia;
-
-
-
-
-
-
-
-
-
+    @OneToMany(mappedBy = "programa")
+    private List<Referencia_bibliografica> referencias = new ArrayList<>(); // <-- É uma Lista
 
 
 }

@@ -11,6 +11,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @Getter
 @Setter
+@PrimaryKeyJoinColumn(name = "usuario_id")
 public class Administrador extends Usuario {
 
     @Column(nullable = false)

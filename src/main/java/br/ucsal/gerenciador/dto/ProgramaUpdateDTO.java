@@ -1,39 +1,25 @@
 package br.ucsal.gerenciador.dto;
 
-import jakarta.validation.constraints.NotNull;
+import java.util.List; // 1. IMPORTADO
 
 public class ProgramaUpdateDTO {
 
-    @NotNull
-    private int idDisciplina;
+    // 2. CAMPO 'idDisciplina' REMOVIDO
 
-    @NotNull
     private String ementa;
-
-    @NotNull
     private String objetivos;
-
-    @NotNull
     private String conteudo_programatico;
-
-    @NotNull
     private String metodologia;
-
-    @NotNull
     private String sistema_avaliacao;
-
     private boolean ativo = true;
+
+    // 3. CAMPO 'professores_ids' ADICIONADO
+    private List<Integer> professores_ids;
 
     public ProgramaUpdateDTO() {
     }
 
-    public int getIdDisciplina() {
-        return idDisciplina;
-    }
-
-    public void setIdDisciplina(int idDisciplina) {
-        this.idDisciplina = idDisciplina;
-    }
+    // 4. GETTERS/SETTERS de 'idDisciplina' REMOVIDOS
 
     public String getEmenta() {
         return ementa;
@@ -81,5 +67,14 @@ public class ProgramaUpdateDTO {
 
     public void setAtivo(boolean ativo) {
         this.ativo = ativo;
+    }
+
+    // 5. GETTERS/SETTERS de 'professores_ids' ADICIONADOS
+    public List<Integer> getProfessores_ids() {
+        return professores_ids;
+    }
+
+    public void setProfessores_ids(List<Integer> professores_ids) {
+        this.professores_ids = professores_ids;
     }
 }

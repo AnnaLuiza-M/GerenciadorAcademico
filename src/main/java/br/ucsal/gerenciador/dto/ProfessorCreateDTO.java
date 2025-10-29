@@ -9,6 +9,12 @@ import java.io.Serial;
 public class ProfessorCreateDTO {
 
     @NotBlank
+    private String email;
+
+    @NotBlank
+    private String senha;
+
+    @NotBlank
     private String nome_completo;
 
     @NotNull
@@ -52,5 +58,21 @@ public class ProfessorCreateDTO {
 
     public void setAtivo(boolean ativo) {
         this.ativo = ativo;
+    }
+
+    public String getSenha() {
+        return senha;
+    }
+
+    public void setSenha(String senha) {
+        this.senha = senha;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 }

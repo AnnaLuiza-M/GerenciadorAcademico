@@ -15,6 +15,7 @@ import java.util.List;
 @Setter
 @NoArgsConstructor
 @Entity
+@PrimaryKeyJoinColumn(name = "usuario_id")
 public class Professor extends Usuario {
 
     @Column(nullable = false)
@@ -30,6 +31,6 @@ public class Professor extends Usuario {
     private boolean ativo = true;
 
     @ManyToMany(mappedBy = "professores")
-    private List<Programa> programas;
+    private List<Programa> programa;
 
 }
